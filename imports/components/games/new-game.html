@@ -1,14 +1,14 @@
-<ion-view class="new-game-pane">
   <ion-header-bar>
     <h1 class="title">New Game</h1>
     <div class="buttons">
       <button class="button button-clear button-positive" ng-click="newgame.goBack()">Cancel</button>
     </div>
   </ion-header-bar>
+<ion-view class="new-game-pane">
   <ion-header class="bar bar-subheader"
     ng-class="{ 'bar-assertive': newgame.selectTeam == 'red', 'bar-positive': newgame.selectTeam == 'blue' }"
   ><h2>Select {{ newgame.selectTeam }} {{ newgame.selectWhatPlayer }}</h2></ion-header>
-  <ion-content overflow-scroll="true" padding="true" class="has-header"
+  <ion-content overflow-scroll="true" padding="true" class="has-header has-footer"
     ng-class="{ 'bg-assertive': newgame.selectTeam == 'red', 'bg-positive': newgame.selectTeam == 'blue' }">
     <ion-list type="list-inset">
       <div ng-repeat="player in newgame.players">

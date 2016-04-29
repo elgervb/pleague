@@ -1,14 +1,27 @@
 .new-game-pane {
-  // background: url(img/soccerfield.png) no-repeat center center fixed; 
-  // -webkit-background-size: cover;
-  // -moz-background-size: cover;
-  // background-size: cover;
-
+  .bar-assertive {
+    h2 {
+      color: white;
+    }
+  }
   .bg-assertive {
     background-color: #ef473a;
+    h3 {
+      color: white;
+      font-size: 1.5rem;
+    }
+  }
+  .bar-positive {
+    h2 {
+      color: white;
+    }
   }
   .bg-positive {
-    background-color: #387ef5;;
+    background-color: #387ef5;
+    h3 {
+      color: white;
+      font-size: 1.5rem;
+    }
   }
   .game-inprogress {
     .content-center {

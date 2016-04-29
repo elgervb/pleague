@@ -43,6 +43,7 @@ class GamesCtrl {
         // since the 'complex' logic is done serverside data is just a simple collection here
         return Games.find(
           { endDate: { $exists: true }  }
+          // { endDate: { $exists: true } }, { limit: 5 , sort: { startDate: -1} }
         );
       },
       inprogress() {
