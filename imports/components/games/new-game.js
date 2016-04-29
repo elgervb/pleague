@@ -11,6 +11,7 @@ class NewGameCtrl {
     this.$state = $state;
     this.$ionicPopup = $ionicPopup;
     this.$ionicHistory = $ionicHistory;
+    this.subscribe('players');
 
     console.log('in new-game controller');
 

@@ -11,6 +11,11 @@ class NewTeamCtrl {
     this.$ionicPopup = $ionicPopup;
     this.$ionicHistory = $ionicHistory;
     
+    // TODO: figure out which publications are needed here
+    this.subscribe('players');
+    this.subscribe('teams');
+    this.subscribe('games');
+
     console.log('in new-team controller');
 
     this.helpers({

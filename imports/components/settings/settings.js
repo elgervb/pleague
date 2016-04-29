@@ -11,6 +11,11 @@ class SettingsCtrl {
     this.$state = $state;
     this.$log = $log; 
     
+    // TODO: figure out which publications are needed here
+    this.subscribe('players');
+    this.subscribe('teams');
+    this.subscribe('games');
+
     console.log('in settings controller');
 
     this.currentUser = function () {

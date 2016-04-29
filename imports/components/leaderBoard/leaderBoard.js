@@ -8,6 +8,8 @@ class LeaderboardCtrl {
   constructor($scope) {
     $scope.viewModel(this);
     
+    this.subscribe('players');
+
     console.log('in leaderBoard controller');
 
     this.helpers({

@@ -11,6 +11,20 @@ class GamesCtrl {
     this.$state = $state;
     this.$ionicPopup = $ionicPopup;
     this.gameScoreService = gameScoreService;
+    this.skip = 0;
+    this.subscribe('teams');
+    this.subscribe('players');
+
+    // call with no arguments returns defaults: skip 0, limit 5
+    this.subscribe('games');//.overview');
+    // otherwise provide them (see /server/main.js)
+    // this.subscribe('games.overview', () => {
+    //   return [0, 10];
+    // });
+    // or with a reactive variable defined as `this.skip = 0`
+    // this.subscribe('games.overview', () => {
+    //   return [this.getReactively('skip'), 10];
+    // });
 
     console.log('in games controller');
 
@@ -26,8 +40,9 @@ class GamesCtrl {
         return false;
       },
       data() {
+        // since the 'complex' logic is done serverside data is just a simple collection here
         return Games.find(
-          { endDate: { $exists: true } }
+          { endDate: { $exists: true }  }
         );
       },
       inprogress() {
@@ -78,7 +93,7 @@ export default angular.module('games', [
     controllerAs: 'games'
   })
   .config(($stateProvider) => {
-      $stateProvider.state('tab.games', {
+    $stateProvider.state('tab.games', {
       url: '/games',
       views: {
         'tab-games': {

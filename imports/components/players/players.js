@@ -8,6 +8,11 @@ class PlayersCtrl {
   constructor($scope) {
     $scope.viewModel(this);
     
+    // TODO: figure out which publications are needed here
+    this.subscribe('players');
+    this.subscribe('teams');
+    this.subscribe('games');
+
     console.log('in players controller');
 
     this.helpers({
