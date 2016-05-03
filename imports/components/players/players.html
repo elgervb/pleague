@@ -13,11 +13,14 @@
 <ion-view view-title="Players">
   <ion-content>
     <ion-list type="list-inset">
-      <div class="row" ng-repeat="player in players.data | orderBy:'name'">
-        <div class="col col-50"><h4>{{ player.name }}</h4></div>
-        <div class="col">Elo: {{ player.elo }}</div>
-        <div class="col">Joined {{ player.joinDate | calendar }}</div>
-      </div>
+      <ion-item ng-repeat="player in players.data | orderBy:'name'" class="item-text-wrap" type="item-text-wrap" ng-click="players.toggleInfo(player)">
+        <h2><i class="icon ion-person"></i> {{ player.name }}</h2>
+        <span class="badge" ng-class="player.elo < 1500 ? 'badge-assertive' : 'badge-balanced'">{{ player.elo }}</span>
+        <span ng-if="players.showPlayerInfo == player._id">Joined {{ player.joinDate | calendar }}</span>
+        <ion-option-button class="button-assertive" ng-click="players.eloPenalty(player)">
+          Elo penalty
+        </ion-option-button>
+      </ion-item>
     </ion-list>
   </ion-content>
 </ion-view>

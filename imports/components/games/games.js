@@ -79,23 +79,7 @@ class GamesCtrl {
   }
 
   showNewGameModal() {
-    if (this.inprogress) {
-      let confirmPopup = this.$ionicPopup.confirm({
-        title: 'Unable to create game',
-        template: 'Cannot add game while a game is in progress.<br><b>Do you want to end this game?</b>'
-      });
-
-      confirmPopup.then((res) => {
-        if (res) {
-          Games.remove(this.inprogress._id);
-        } else {
-          console.log('You are not sure');
-          return;
-        }
-      });
-    } else {
-      this.$state.go('tab.newgame');
-    }
+    this.$state.go('tab.newgame');
   }
 
   remove(game) {
