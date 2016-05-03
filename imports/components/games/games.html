@@ -7,22 +7,19 @@
   <ion-nav-buttons side="left">
     <pre>{{ games.role }}</pre>
   </ion-nav-buttons>
-  <ion-nav-buttons side="right" ng-hide="games.inprogress">
-    <button ng-click="games.showNewGameModal()" class="button button-clear button-positive button-icon ion-plus-round"></button>
+  <ion-nav-buttons side="right">
+    <button ng-hide="games.inprogress" ng-click="games.showNewGameModal()" class="button button-clear button-positive button-icon ion-plus-round"></button>
   </ion-nav-buttons>
 </ion-nav-bar>
 
 <ion-view view-title="Games">
-  <ion-nav-buttons side="left">
-    <pre>{{ games.role }}</pre>
-  </ion-nav-buttons>
-  <ion-nav-buttons side="right" ng-hide="games.inprogress">
-    <button ng-click="games.showNewGameModal()" class="button button-clear button-positive button-icon ion-plus-round"></button>
-  </ion-nav-buttons>
   <ion-content>
     <div class="card game-inprogress" ng-show="games.inprogress">
       <div class="item item-divider">
         Game in progress
+        <a ng-click="games.trashGameInProgressModal()" class="item-icon-right">
+            <i class="icon ion-trash-a"></i>
+        </a>
       </div>
       <div class="item item-text-wrap">
         <div class="row">
