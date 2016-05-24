@@ -27,7 +27,10 @@ export default angular.module('leaderBoard', [
   })
   .component('leaderBoardList', {
     templateUrl: 'imports/components/leaderBoard/leaderBoardList.html',
-    controller: ['$scope', LeaderboardCtrl]
+    controller: ['$scope', LeaderboardCtrl],
+    bindings: {
+      max: '<'
+    }
   })
   .config(($stateProvider) => {
       $stateProvider.state('tab.leaderboard', {

@@ -8,9 +8,18 @@
 
 <ion-view view-title="Dashboard">
   <ion-content>
-    <div class="row">
+    <div class="row row-50">
       <div class="col">
-        <leader-board-list></leader-board-list>
+        <leader-board-list max="5"></leader-board-list>
+      </div>
+      <div class="col">
+        <teams-list max="5"></teams-list>
+      </div>
+    </div>
+    <div class="row row-50">
+      <div class="col">
+        <h3>Change stats</h3>
+        <change-stats></change-stats>
       </div>
       <div class="col">
         <game-in-progress ng-show="$ctrl.inprogress" game="$ctrl.inprogress" controls="false"></game-in-progress>
@@ -18,7 +27,6 @@
           <h3>Latest game</h3>
           <game-detail ng-show="!$ctrl.inprogress" game="$ctrl.lastGame"></game-detail>
         </ion-list>
-        <teams-list max="5"></teams-list>
       </div>
     </div>
   </ion-content>

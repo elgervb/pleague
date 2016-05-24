@@ -3,7 +3,9 @@ import angularMeteor from 'angular-meteor';
 import { Players } from '../../api/players.js';
 import { Games } from '../../api/games.js';
 
-import template from './dashBoard.html';
+import dashBoardTemplate from './dashBoard.html';
+import ChangestatsCtrl from './changeStats.js';
+import changeStatsTemplate from './changeStats.html';
 
 class DashboardCtrl {
   constructor($scope, $state) {
@@ -40,6 +42,10 @@ export default angular.module('dashBoard', [
   .component('dashBoard', {
     templateUrl: 'imports/components/dashBoard/dashBoard.html',
     controller: ['$scope', '$state', DashboardCtrl]
+  })
+  .component('changeStats', {
+    templateUrl: 'imports/components/dashBoard/changeStats.html',
+    controller: ['$scope', '$state', ChangestatsCtrl]
   })
   .config(($stateProvider) => {
       $stateProvider.state('tab.dashboard', {
