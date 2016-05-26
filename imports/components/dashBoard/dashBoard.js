@@ -4,7 +4,6 @@ import { Players } from '../../api/players.js';
 import { Games } from '../../api/games.js';
 
 import dashBoardTemplate from './dashBoard.html';
-import ChangestatsCtrl from './changeStats.js';
 import changeStatsTemplate from './changeStats.html';
 
 class DashboardCtrl {
@@ -33,6 +32,21 @@ class DashboardCtrl {
 
   showNewGameModal() {
     this.$state.go('tab.newgame');
+  }
+}
+
+class ChangestatsCtrl {
+  constructor($scope, $state) {
+    $scope.viewModel(this);
+    this.$state = $state;
+
+    console.log('in changeStats controller');
+
+    this.helpers({
+      playersList() {
+        return Players.find();
+      }
+    });
   }
 }
 
